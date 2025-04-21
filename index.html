@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vũ Trụ Nghề Nghiệp</title>
+    <style>
+        body {
+            background: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        #planets-container {
+            position: relative;
+            margin-top: 20px;
+        }
+        .planet {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #add8e6;
+            border-radius: 50%;
+            animation: orbit 10s linear infinite;
+        }
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        #stats-container {
+            margin-top: 30px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        h1, h2 {
+            color: #4682b4;
+        }
+    </style>
+</head>
+<body>
+    <div id="universe">
+        <h1>Vũ Trụ Nghề Nghiệp</h1>
+        <p>Nhập vào nghề mong muốn dưới dạng dãy nhị phân:</p>
+        <input type="text" id="binary-input" placeholder="Nhập dãy nhị phân">
+        <button onclick="createPlanet()">Tạo hành tinh</button>
+        
+        <!-- Khu vực hiển thị hành tinh -->
+        <div id="planets-container"></div>
+
+        <!-- Bảng thống kê nghề nghiệp -->
+        <div id="stats-container"></div>
+    </div>
+
+    <script src="firebase-config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
